@@ -1,3 +1,11 @@
 language: ruby
 rvm:
-  - 2.2.1
+- 2.2.1
+deploy:
+  provider: rubygems
+  api_key:
+    secure: 0mczzEzYxHev+CvtCe63WYEN2k3GoGI3vmtTweZSrIN+HWuM9rNimSWBiPUdsX7w3BfTe0GTxSEcZKITLed1GXMa1e8+eTSwvbtOyT/iCAsKc/iFLuNlXExxsOqGvBD0Bhl4127pWcwyS/9Wdu/aNXTTXb6fuzW0DkuBEV2NV8M3IqPgvWGBJJo4RxPgWPO0sF8YTvgtO30hy2LOSghEZVmVIzyC3isWgVw7ajGRJJxincwAGl6CIFVn+aKEtplA8KO524pzMscZXFEp/yprmMrHkM/FBaDJzSHMNlPcbGQ3MjkGdQA/D5ZJWfelw+iiEyHQT2i2dUlQSagH3ybnuqQitKrhbcvzZgmOFb3J3IkYY3IGdXQHgZh5r7P9OQr+BETTTS4fBh1whQE6rXHxr4/7MhZgqbK5NZbMpf03vM9DEfH/0r1iRkdns97Ln4dbscGxQQQbdjeeeGsHsk2EX0MsXc7N4QjDE9kEMXywymEKQNdwjSNQYJBTTmolOh1vqMxedgoVj02RO/+kabf040YGzj+INvyVVS+JCechx18qIEihtoCKmkxBaPRQ2a/JSd82SbPM238jg+rKoJxhP5iO9MOs55Dv/KD7/auden98JZ4cbKX8aZGVYzHTlpp0dx8/KFdikOHV7mrS6fJiydHo/wsXMqS9Ek1BtV4cecU=
+  gem: rack-honoured_deceased
+  on:
+    tags: true
+    repo: jphastings/rack-honoured_deceased
