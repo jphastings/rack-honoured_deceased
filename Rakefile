@@ -1,7 +1,22 @@
 require 'bundler/gem_tasks'
-require 'rake/testtask'
+require 'rspec/core/rake_task'
 
-Rake::TestTask.new do |t|
-  t.libs << 'test'
-  t.pattern = "test/*_test.rb"
+task :default => :build
+task :build => :test
+
+desc "Runs all tests"
+task :test => :spec
+
+desc "Run all rspec tests"
+begin
+  require "rspec/core/rake_task"
+
+  RSpec::Core::RakeTask.new(:spec) do |t|
+    t.pattern = "spec/**/*_spec.rb"
+  end
+rescue LoadError => e
+  raise e
+  task :spec do
+    $stderr.puts "Please install rspec: `gem install rspec`"
+  end
 end
