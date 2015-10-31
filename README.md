@@ -1,6 +1,6 @@
-# Rack::Pratchett
+# Rack::HonouredDeceased
 
-A simple gem to include X-Clacks-Overhead headers into any rack (rails, sinatra, etc) application.
+A simple gem to include X-Clacks-Overhead headers for those lost but not forgotten into any rack (rails, sinatra, etc) application.
 
 Inspired by [this thread](http://redd.it/2yt9j6) on reddit.
 
@@ -9,7 +9,7 @@ Inspired by [this thread](http://redd.it/2yt9j6) on reddit.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'rack-pratchett'
+gem 'rack-honoured_deceased'
 ```
 
 And then execute:
@@ -18,7 +18,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install rack-pratchett
+    $ gem install rack-honoured_deceased
 
 ## Usage
 
@@ -27,11 +27,11 @@ Or install it yourself as:
 ```ruby
 # config.ru
 require 'rack'
-require 'rack/pratchett'
+require 'rack/honoured_deceased'
 
-use Rack::Pratchett
+use Rack::HonouredDeceased, ["Terry Pratchett"]
 app = proc do |env|
-  [ 200, {'Content-Type' => 'text/plain'}, ["GNU Terry Pratchett"] ]
+  [ 200, {'Content-Type' => 'text/plain'}, ["Your webapp"] ]
 end
 ```
 Then run
@@ -40,44 +40,38 @@ Then run
 ### Sinatra
 ```ruby
 require 'sinatra'
-require 'rack/pratchett'
+require 'rack/honoured_deceased'
 
-use Rack::Pratchett
+use Rack::HonouredDeceased, ["Terry Pratchett"]
 
 get '/' do
-  'GNU Terry Pratchett'
+  'Your webapp'
 end
 ```
 
 ### Rails
 ```ruby
 # Add it to your Gemfile
-gem 'rack-pratchett'
+gem 'rack-honoured_deceased'
 ```
 
 ```ruby
 # In config/application.rb
-config.middleware.use Rack::Pratchett
+config.middleware.use Rack::HonouredDeceased, ["Terry Pratchett"]
 ```
 or
 
 ```ruby
 # In config.ru
-use Rack::Pratchett
+use Rack::HonouredDeceased, ["Terry Pratchett"]
 ```
 ## Testing
 
 `rspec`
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release` to create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
 ## Contributing
 
-1. Fork it ( https://github.com/wonderbread/rack-pratchett/fork )
+1. Fork it ( https://github.com/jphastings/rack-honoured_deceased/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
