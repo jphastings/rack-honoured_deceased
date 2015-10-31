@@ -14,8 +14,7 @@ begin
   RSpec::Core::RakeTask.new(:spec) do |t|
     t.pattern = "spec/**/*_spec.rb"
   end
-rescue LoadError => e
-  raise e
+rescue LoadError
   task :spec do
     $stderr.puts "Please install rspec: `gem install rspec`"
   end
